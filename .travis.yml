@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t kacperKwiatkowski/fibonacci_docker -f .client/Dockerfile.dev ./client
+
+script:
+  - docker run kacperKwiatkowski/fibonacci_docker npm test -- --coverage
+
+after_success:
+  - docker build -t kacperKwiatkowski/fibonacci_docker-client ./client
+  - docker build -t kacperKwiatkowski/fibonacci_docker-nginx ./nginx
+  - docker build -t kacperKwiatkowski/fibonacci_docker-serwer ./serwer
+  - docker build -t kacperKwiatkowski/fibonacci_docker-worker ./worker
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  - docker push kacperKwiatkowski/fibonacci_docker-client
+  - docker push kacperKwiatkowski/fibonacci_docker-nginx
+  - docker push kacperKwiatkowski/fibonacci_docker-serwer
+  - docker push kacperKwiatkowski/fibonacci_docker-worker
