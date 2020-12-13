@@ -16,6 +16,7 @@ after_success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
+
   - docker push kacperkwiatkowski/fibonacci_docker-client
   - docker push kacperkwiatkowski/fibonacci_docker-nginx
   - docker push kacperkwiatkowski/fibonacci_docker-serwer
