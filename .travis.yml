@@ -23,3 +23,15 @@ after_success:
   - docker push kacperkwiatkowski/fibonacci_docker-nginx
   - docker push kacperkwiatkowski/fibonacci_docker-serwer
   - docker push kacperkwiatkowski/fibonacci_docker-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-west-2'
+  app: 'fibonacci_docker'
+  env: 'FibonacciDocker-env'
+  bucket_name: 'elasticbeanstalk-us-west-2-756199627628'
+  bucket_path: 'fibonacci_docker'
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
