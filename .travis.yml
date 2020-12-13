@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t kacperkwiatkowski/fibonacci_docker -f .client/Dockerfile.dev ./client
+  - docker build -t kacperkwiatkowski/fibonacci_docker -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run kacperkwiatkowski/fibonacci_docker npm test -- --coverage
