@@ -1,0 +1,16 @@
+
+EBS instance identifier = FibonacciEbs-env
+DB instance identifier = fibonacci-db (multi-docker-postgres)
+Initial database name = fibdb (fibvalues)
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgrespassword
+ VPC security group name = fibonacci-vpc
+
+ ElasiCache
+ redis-name = fibonacci-redis
+
+
+ redis-subnet
+ name = redis-ec
