@@ -17,7 +17,7 @@ function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Changes so the docker container would be rebuild
+                        Fib calculator
                     </a>
                     <Link to="/">Home</Link>
                     <Link to="/otherpage">Other Page</Link>
