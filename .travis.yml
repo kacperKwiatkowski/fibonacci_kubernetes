@@ -13,7 +13,7 @@ script:
 after_success:
   - docker build -t kacperkwiatkowski/fibonacci_docker-client ./client
   - docker build -t kacperkwiatkowski/fibonacci_docker-nginx ./nginx
-  - docker build -t kacperkwiatkowski/fibonacci_docker-serwer ./server
+  - docker build -t kacperkwiatkowski/fibonacci_docker-server ./server
   - docker build -t kacperkwiatkowski/fibonacci_docker-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
