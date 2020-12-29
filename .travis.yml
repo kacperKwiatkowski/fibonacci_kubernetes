@@ -10,7 +10,7 @@ services:
     - gcloud config set project fibonacci-kubernates
     - gcloud config set complete/zone us-central1-a
     - gcloud container clusters get-credentials fibonacci-cluster
-    - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_USERNAME" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u $"DOCKER_USERNAME" --password-stdin
     - docker build -t kacperKwiatkowski/react-test -f ./client/Dockerfile.dev ./client
 
 script:
