@@ -1,6 +1,6 @@
 docker build -t kacperkwiatkowski/fibonacci_docker-client:latest -t kacperkwiatkowski/fibonacci_docker:$SHA -f ./client/Dockerfile ./client
 docker build -t kacperkwiatkowski/fibonacci_docker-server:latest -t kacperkwiatkowski/fibonacci_docker:$SHA -f ./server/Dockerfile ./server
-docker build -t kacperkwiatkowski/fibonacci_docker-worker:latest -t kacperkwiatkowski/fibonacci_docker:$SHA -f ./client/Dockerfile ./worker
+docker build -t kacperkwiatkowski/fibonacci_docker-worker:latest -t kacperkwiatkowski/fibonacci_docker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push kacperkwiatkowski/fibonacci_docker-client:latest
 docker push kacperkwiatkowski/fibonacci_docker-server:latest
