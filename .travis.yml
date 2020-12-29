@@ -14,4 +14,5 @@ services:
     - docker build -t kacperKwiatkowski/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run kacperKwiatkowski/react-test npm test -- --coverage
+    - docker run -e CI=true kacperKwiatkowski/react-test npm test
+
